@@ -36,14 +36,14 @@ const HomePage = () => {
                             </Col>
                             <Col className='text-center mt-1'>
                                 <CardComponent 
-                                    title="Team culture"
+                                    title="Team"
                                     text="Yes, we are a real team!" 
                                     image="/images/team.png"    
                                     />
                             </Col>
                             <Col className='text-center mt-1'>
                                 <CardComponent 
-                                    title="Time "
+                                    title="Time"
                                     text="Do the important, not the urgent!" 
                                     image="/images/time-management.png"    
                                     />
@@ -58,7 +58,7 @@ const HomePage = () => {
                             <Col className='text-center mt-1'>
                                 <CardComponent 
                                     title="Principles"
-                                    text="Be principles centered, the right guide!" 
+                                    text="Principles centered, the right guide!" 
                                     image="/images/balance.png"    
                                     />
                             </Col>
