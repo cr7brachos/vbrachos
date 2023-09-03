@@ -2,8 +2,6 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Carousel from 'react-bootstrap/Carousel';
-import CarouselSlideComponent from "../components/CarouselSlideComponent";
 import CardComponent from '../components/CardComponent';
 
 const HomePage = () => {

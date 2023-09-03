@@ -14,6 +14,7 @@ import Team from './pages/Team';
 import Time from './pages/Time';
 import Effectiveness from './pages/Effectiveness';
 import Principles from './pages/Principles';
+import MainCell from './pages/MainCell';
 
 
 function App() {
@@ -21,27 +22,31 @@ function App() {
 
     <BrowserRouter>
 
-      <Header />
+      {/* <Header /> */}
       
       <Routes>
 
-          <Route path="/" element={<HomePage />}></Route>; 
-          <Route path="/blog" element={<Blog />}></Route>;
-          <Route path="/personal-info" element={<Personalinfo />}></Route>
-          <Route path='/studies' element={<Studies />}></Route>
-          <Route path="/experience" element={<Experience />}></Route>
-          <Route path="/download" element={<Download />}></Route>
-          <Route path="/leadership" element={<Leadership />}></Route>
-          <Route path="/management" element={<Management />}></Route>
-          <Route path="/team" element={<Team />}></Route>
-          <Route path="/time" element={<Time />}></Route>
-          <Route path="/effectiveness" element={<Effectiveness />}></Route>
-          <Route path="/principles" element={<Principles />}></Route>
+          {/* nested routes in the main cell. they come out from the Outlet inside the Maincell*/}
+          <Route path='/' element={<MainCell/>}>; 
+            <Route path="/" element={<HomePage />}></Route>; 
+            <Route path="/blog" element={<Blog />}></Route>;
+            <Route path="/personal-info" element={<Personalinfo />}></Route>
+            <Route path='/studies' element={<Studies />}></Route>
+            <Route path="/experience" element={<Experience />}></Route>
+            <Route path="/download" element={<Download />}></Route>
+            <Route path="/leadership" element={<Leadership />}></Route>
+            <Route path="/management" element={<Management />}></Route>
+            <Route path="/team" element={<Team />}></Route>
+            <Route path="/time" element={<Time />}></Route>
+            <Route path="/effectiveness" element={<Effectiveness />}></Route>
+            <Route path="/principles" element={<Principles />}></Route>
+          </Route>
+          
 
       </Routes>
 
 
-      <Footer />
+      {/* <Footer /> */}
 
     </BrowserRouter>
   

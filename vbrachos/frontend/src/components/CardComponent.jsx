@@ -1,13 +1,9 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Image from 'react-bootstrap/esm/Image';
 import { LinkContainer } from 'react-router-bootstrap';
 
 
 function CardComponent({ title, text, image }) {
-
-  const linkTo = ("/" + title).toLowerCase();
-  
 
   return (
     <Card style={{ width: '12rem'}}>
@@ -15,7 +11,7 @@ function CardComponent({ title, text, image }) {
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{text}</Card.Text>
-        <LinkContainer to={linkTo} >
+        <LinkContainer to={`/${title.toLowerCase()}`} >
           <Button variant="primary">Learn more</Button>
         </LinkContainer>
         
