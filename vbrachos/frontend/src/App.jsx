@@ -1,6 +1,4 @@
 import React from 'react';
-import Footer from './components/Footer';
-import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Blog from './pages/Blog';
 import HomePage from './pages/HomePage';
@@ -15,6 +13,7 @@ import Time from './pages/Time';
 import Effectiveness from './pages/Effectiveness';
 import Principles from './pages/Principles';
 import MainCell from './pages/MainCell';
+import SignIn from './pages/SignIn';
 
 
 function App() {
@@ -40,6 +39,7 @@ function App() {
             <Route path="/time" element={<Time />}></Route>
             <Route path="/effectiveness" element={<Effectiveness />}></Route>
             <Route path="/principles" element={<Principles />}></Route>
+            <Route path='/sign-in' element={<SignIn />}></Route>
           </Route>
           
 

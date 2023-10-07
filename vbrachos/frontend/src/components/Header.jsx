@@ -61,6 +61,10 @@ function Header() {
               <Nav.Link as="a" href='https://www.linkedin.com/in/vassilis-brachos-5161a627' target='_blank'>
                 <Image src="images/linkedin.png" width={25} height={25} fluid />
               </Nav.Link>
+
+              <LinkContainer to="/sign-in">
+                <Nav.Link>Sign In</Nav.Link>
+              </LinkContainer>
             
           </Nav>
         </Navbar.Collapse>
