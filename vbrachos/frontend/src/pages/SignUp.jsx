@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 import Alert from 'react-bootstrap/Alert';
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../utils/firebase/firebase.utils";
+import ButtonComponent from "../components/Button/button.component";
 
 
 // αρχικές τιμές σε όλα τα πεδία της φόρμας. 
@@ -77,12 +78,14 @@ const SignUp = () => {
         <Container>
             <Row className="mt-5 mb-5 justify-content-md-center">
                 <Col md={6}>
-                    <h1>Sign Up</h1>
+                    <h2>Don't have an account?</h2>
+                    <span>Sign up with your email and password</span>
+                    
 
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
                         
                         <Form.Group className="mb-3" controlId="formFirstName">
-                            <Form.Label>Your first name</Form.Label>
+                            {/* <Form.Label>Your first name</Form.Label> */}
                             <Form.Control 
                                 required 
                                 type="text" 
@@ -95,7 +98,7 @@ const SignUp = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formLastName">
-                            <Form.Label>Your last name</Form.Label>
+                            {/* <Form.Label>Your last name</Form.Label> */}
                             <Form.Control 
                                 required 
                                 type="text" 
@@ -108,7 +111,7 @@ const SignUp = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email</Form.Label>
+                            {/* <Form.Label>Email</Form.Label> */}
                             <Form.Control 
                                 required 
                                 type="email" 
@@ -121,7 +124,7 @@ const SignUp = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Your password</Form.Label>
+                            {/* <Form.Label>Your password</Form.Label> */}
                             <Form.Control 
                                 required 
                                 type="password" 
@@ -136,7 +139,7 @@ const SignUp = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPasswordRepeat">
-                            <Form.Label>Confirm password</Form.Label>
+                            {/* <Form.Label>Confirm password</Form.Label> */}
                             <Form.Control 
                                 required 
                                 type="password" 
@@ -166,6 +169,7 @@ const SignUp = () => {
                             /> */}
                                 Sign Up
                         </Button>
+                        <ButtonComponent children="Sign Up" buttonType="inverted"></ButtonComponent>
                         <Alert show={true} variant="danger">User with this email already exist</Alert>
                         <Alert show={true} variant="info">User created !</Alert>
                     </Form>
