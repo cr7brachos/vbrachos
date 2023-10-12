@@ -169,7 +169,7 @@ const SignUp = () => {
                             /> */}
                                 Sign Up
                         </Button>
-                        <ButtonComponent children="Sign Up" buttonType="inverted"></ButtonComponent>
+                        <ButtonComponent children="Sign Up" buttonType=""></ButtonComponent>
                         <Alert show={true} variant="danger">User with this email already exist</Alert>
                         <Alert show={true} variant="info">User created !</Alert>
                     </Form>
