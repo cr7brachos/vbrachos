@@ -62,7 +62,7 @@ function Header() {
                 <Image src="images/linkedin.png" width={25} height={25} fluid />
               </Nav.Link>
 
-              <LinkContainer to="/sign-in">
+              <LinkContainer to="/auth">
                 <Nav.Link>Sign In</Nav.Link>
               </LinkContainer>
             

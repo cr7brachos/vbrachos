@@ -13,7 +13,7 @@ import Time from './pages/Time';
 import Effectiveness from './pages/Effectiveness';
 import Principles from './pages/Principles';
 import MainCell from './pages/MainCell';
-import SignIn from './pages/SignIn';
+import AuthenticationComponent from './pages/authentication/authentication.component';
 
 
 //101023 cloned from GitHub
@@ -41,7 +41,7 @@ function App() {
             <Route path="/time" element={<Time />}></Route>
             <Route path="/effectiveness" element={<Effectiveness />}></Route>
             <Route path="/principles" element={<Principles />}></Route>
-            <Route path='/sign-in' element={<SignIn />}></Route>
+            <Route path='/auth' element={<AuthenticationComponent />}></Route>
           </Route>
           
 

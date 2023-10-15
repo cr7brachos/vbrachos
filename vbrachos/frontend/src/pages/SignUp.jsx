@@ -31,6 +31,7 @@ const SignUp = () => {
         const handleChange = (event) => {
             const password = document.querySelector("input[name= password]"); //διαβάζει το input με name=password
             const confirm = document.querySelector("input[name = confirmPassword]"); //διαβάζει το input με name=confirmPassword
+            
             if (confirm.value === password.value) { //εάν οι δύο τιμές είναι ίδιες τότε σετάρει το setCustomValidity του confirmPassword 
                 confirm.setCustomValidity("");
             } else {
@@ -49,9 +50,25 @@ const SignUp = () => {
         // when form button is submitted
         const handleSubmit = async (event) => {
             const form = event.currentTarget;
+           
+            if (confirmPassword === password) {
+                console.log("pass match");
+                event.preventDefault();
+                event.stopPropagation();
+                try {
+                    const { user } = await createAuthUserWithEmailAndPassword(email, password);
+                    await createUserDocumentFromAuth(user, { displayName: name + " " + lastName });
+                    setFormFields(defaultFormFields);
+                    
+                } catch (error) {
+                    console.log("user creation encountered an error", error);
+                }
+            }
+
             if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
+            console.log("i am here");
             
             } else {
                 event.preventDefault();
@@ -69,7 +86,7 @@ const SignUp = () => {
 
             setValidated(true);
 
-            
+            console.log(validated);
             
         };
 
@@ -127,7 +144,7 @@ const SignUp = () => {
                             {/* <Form.Label>Your password</Form.Label> */}
                             <Form.Control 
                                 required 
-                                type="password" 
+                                type="text" 
                                 placeholder="Enter your password" 
                                 name="password"
                                 minLength={6}
@@ -142,7 +159,7 @@ const SignUp = () => {
                             {/* <Form.Label>Confirm password</Form.Label> */}
                             <Form.Control 
                                 required 
-                                type="password" 
+                                type="text" 
                                 placeholder="Repeat password" 
                                 name="confirmPassword"
                                 minLength={6}
@@ -169,7 +186,7 @@ const SignUp = () => {
                             /> */}
                                 Sign Up
                         </Button>
-                        <ButtonComponent children="Sign Up" buttonType=""></ButtonComponent>
+                        {/* <ButtonComponent children="Sign Up" buttonType=""></ButtonComponent> */}
                         <Alert show={true} variant="danger">User with this email already exist</Alert>
                         <Alert show={true} variant="info">User created !</Alert>
                     </Form>
