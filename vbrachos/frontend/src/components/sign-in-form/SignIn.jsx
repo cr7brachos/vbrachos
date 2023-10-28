@@ -13,7 +13,7 @@ import {    createUserDocumentFromAuth,
 import ButtonComponent from "../Button/button.component";
 import "./signIn.styles.scss";
 import AlertComponent from "../Alert/alert.component";
-import { UserContext } from "../../contexts/user.context";
+// import { UserContext } from "../../contexts/user.context";
 
 
 // αρχικές τιμές σε όλα τα πεδία της φόρμας. 
@@ -33,12 +33,12 @@ const SignIn = () => {
         const { email, password } = formFields; //destructuring 
 
         const signInWithGoogle = async () => {
-            const { user } = await signInWithGooglePopup();
-            await createUserDocumentFromAuth(user);
+            await signInWithGooglePopup();
+          
             
         }
 
-        const { setCurrentUser } = useContext(UserContext);
+        // const { setCurrentUser } = useContext(UserContext);
 
         // ελέγχει εάν τα δύο password είναι ίδια
         const handleChange = (event) => {
@@ -68,7 +68,7 @@ const SignIn = () => {
                     const { user } = await signInAuthUserWithEmalAndPassowrd(email, password);
                     setFormFields(defaultFormFields);
                     setShowState(false);
-                    setCurrentUser(user);
+                    // setCurrentUser(user);
                 } catch (error) {
                     switch (error.code) {
                         case "auth/wrong-password":

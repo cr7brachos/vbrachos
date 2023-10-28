@@ -9,7 +9,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import Alert from 'react-bootstrap/Alert';
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../utils/firebase/firebase.utils";
 import ButtonComponent from "../components/Button/button.component";
-import { UserContext } from "../contexts/user.context";
+// import { UserContext } from "../contexts/user.context";
 
 
 // αρχικές τιμές σε όλα τα πεδία της φόρμας. 
@@ -27,7 +27,7 @@ const SignUp = () => {
         const [validated, setValidated] = useState(false);
         const [formFields, setFormFields] = useState(defaultFormFields); //set the formFields equal to the default values
         const { name, lastName, email, password, confirmPassword } = formFields; //destructuring 
-        const { setCurrentUser } = useContext(UserContext);
+        // const { setCurrentUser } = useContext(UserContext);
 
         // ελέγχει εάν τα δύο password είναι ίδια
         const handleChange = (event) => {
@@ -60,7 +60,7 @@ const SignUp = () => {
                 try {
                     const { user } = await createAuthUserWithEmailAndPassword(email, password);
                     await createUserDocumentFromAuth(user, { displayName: name + " " + lastName });
-                    setCurrentUser(user);
+                    // setCurrentUser(user);
                     setFormFields(defaultFormFields);
                     
                 } catch (error) {

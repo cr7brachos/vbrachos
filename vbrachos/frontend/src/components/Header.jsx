@@ -12,14 +12,14 @@ import { signOutUser } from "../utils/firebase/firebase.utils";
 
 function Header() {
 
-  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { currentUser } = useContext(UserContext);
   //console.log(currentUser);
 
-  // sign the user out and setContext to null
-  const signOutHandler = async () => {
-    await signOutUser();
-    setCurrentUser(null);
-  }
+  // // sign the user out and setContext to null
+  // const signOutHandler = async () => {
+  //   await signOutUser();
+  //   setCurrentUser(null);
+  // }
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-dark navbar-dark">
@@ -76,7 +76,7 @@ function Header() {
               </Nav.Link>
               {/* if currentUser exists then SignOut, else SignIn */}
               { currentUser ? (<LinkContainer to="/auth">
-                                <Nav.Link onClick={signOutHandler}>Sign Out</Nav.Link>
+                                <Nav.Link onClick={signOutUser}>Sign Out</Nav.Link>
                               </LinkContainer>) 
                             :  (<LinkContainer to="/auth">
                                 <Nav.Link>Sign In</Nav.Link>
