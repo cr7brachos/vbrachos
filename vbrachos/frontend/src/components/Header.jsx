@@ -1,13 +1,26 @@
+import { useContext } from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LinkContainer } from 'react-router-bootstrap';
 import Image from 'react-bootstrap/Image';
+import { UserContext } from "../contexts/user.context";
+import { signOutUser } from "../utils/firebase/firebase.utils";
 
 
 
 function Header() {
+
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+  //console.log(currentUser);
+
+  // sign the user out and setContext to null
+  const signOutHandler = async () => {
+    await signOutUser();
+    setCurrentUser(null);
+  }
+
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-dark navbar-dark">
       <Container>
@@ -61,11 +74,15 @@ function Header() {
               <Nav.Link as="a" href='https://www.linkedin.com/in/vassilis-brachos-5161a627' target='_blank'>
                 <Image src="images/linkedin.png" width={25} height={25} fluid />
               </Nav.Link>
+              {/* if currentUser exists then SignOut, else SignIn */}
+              { currentUser ? (<LinkContainer to="/auth">
+                                <Nav.Link onClick={signOutHandler}>Sign Out</Nav.Link>
+                              </LinkContainer>) 
+                            :  (<LinkContainer to="/auth">
+                                <Nav.Link>Sign In</Nav.Link>
+                              </LinkContainer>)
+              }
 
-              <LinkContainer to="/auth">
-                <Nav.Link>Sign In</Nav.Link>
-              </LinkContainer>
-            
           </Nav>
         </Navbar.Collapse>
       </Container>
