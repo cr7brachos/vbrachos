@@ -1,0 +1,55 @@
+{
+    "PersonalData": {
+        "Name": "Vassilis Brachos",
+        "Birthday": "01 December 1973",
+        "Address": "Athens, Greece",
+        "MaritalStatus": "Married, with one kid",
+        "PhoneNumber": "+30 6970996333",
+        "Email": "vbrproduction@gmail.com"
+    },
+    "StudiesInfo":{
+        "University": {
+            "title": "1992 - 1996, University of West Attica, BSc Automations Engineer",
+            "lessons": ["Mathematics", 
+                        "Physics", 
+                        "Digital systems",
+                        "Automation systems",
+                        "Programming",
+                        "Networks", 
+                        "Mechanics", 
+                        "Electronics",
+                        "Electricals",
+                        "Networking",
+                        "Hydraulics"]
+        },
+        "MBA": {
+            "titleMBA": "1998 - 2000, MBA - MSc Master in Bussiness Administration (EEDE)", 
+            "lessonsMBA": ["Critical issues in Business", 
+                        "Strategic marketing",
+                        "Managing Operations",
+                        "Managing the supply chain",
+                        "Competitive Strategy & Innovation",
+                        "Financial Decision Making",
+                        "Bussiness Management",
+                        "International Bussiness Negotation", 
+                        "The Entrepreneurship Report"]
+        },
+        "Seminars": ["Teams disfunctions", 
+                    "Start with why", 
+                    "The leadership challenge",
+                    "The 7 habits of high effective people",
+                    "How to influence people",
+                    "Execution", 
+                    "Primal leadership",
+                    "Good to Great", 
+                    "The lean startup", 
+                    "Extreme Ownership",
+                    "Emotional Intelligence",
+                    "First break all the rules"
+        ],
+        "Languages": ["English", 
+                       "German", 
+                       "Greek (mother language)"
+        ]
+    }
+}
