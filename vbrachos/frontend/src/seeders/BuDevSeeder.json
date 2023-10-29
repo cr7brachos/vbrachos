@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Bussiness Development",
+        "target": "Expanding the market in Czech Republic",
+        "text": "One more time visiting the Czechish market, supporting our partner ORCA SRO",
+        "image1":"/images/Brno/img1.jpg",
+        "image2":"/images/Brno/img2.jpg",
+        "image3":"/images/Brno/img3.jpg"
+    }, 
+    {
+        "id": 2,
+        "title": "Bussiness Development",
+        "target": "Establish new customes in USA",
+        "text": "Visiting Chicago is always a pleasure. Meeting new and old friends. Making new customers.",
+        "image1":"/images/Chicago/img1.jpg",
+        "image2":"/images/Chicago/img2.jpg",
+        "image3":"/images/Chicago/img3.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Bussiness Development",
+        "target": "Establish new customes in USA",
+        "text": "Visiting Chicago is always a pleasure. Meeting new and old friends. Making new customers.",
+        "image1":"/images/Chicago/img1.jpg",
+        "image2":"/images/Chicago/img2.jpg",
+        "image3":"/images/Chicago/img3.jpg"
+    }
+    
+]

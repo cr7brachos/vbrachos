@@ -1,15 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import Col from "react-bootstrap/esm/Col";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
-import Spinner from 'react-bootstrap/Spinner';
 import Alert from 'react-bootstrap/Alert';
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../utils/firebase/firebase.utils";
 import ButtonComponent from "../components/Button/button.component";
-// import { UserContext } from "../contexts/user.context";
+
 
 
 // αρχικές τιμές σε όλα τα πεδία της φόρμας. 
@@ -27,7 +25,7 @@ const SignUp = () => {
         const [validated, setValidated] = useState(false);
         const [formFields, setFormFields] = useState(defaultFormFields); //set the formFields equal to the default values
         const { name, lastName, email, password, confirmPassword } = formFields; //destructuring 
-        // const { setCurrentUser } = useContext(UserContext);
+        
 
         // ελέγχει εάν τα δύο password είναι ίδια
         const handleChange = (event) => {
@@ -60,7 +58,6 @@ const SignUp = () => {
                 try {
                     const { user } = await createAuthUserWithEmailAndPassword(email, password);
                     await createUserDocumentFromAuth(user, { displayName: name + " " + lastName });
-                    // setCurrentUser(user);
                     setFormFields(defaultFormFields);
                     
                 } catch (error) {
@@ -178,18 +175,12 @@ const SignUp = () => {
                                 <Link to={"/login"}> Login </Link>
                             </Col>
                         </Row>
-                            
-                        <Button type="submit">
-                            {/* <Spinner
-                                as="span"
-                                animation="border"
-                                size="sm"
-                                role="status"
-                                aria-hidden="true"
-                            /> */}
-                                Sign Up
-                        </Button>
-                        {/* <ButtonComponent children="Sign Up" buttonType=""></ButtonComponent> */}
+                                                    
+                        <ButtonComponent 
+                            children="Sign Up" 
+                            buttonType="" 
+                            type="submit">
+                        </ButtonComponent>
                         <Alert show={true} variant="danger">User with this email already exist</Alert>
                         <Alert show={true} variant="info">User created !</Alert>
                     </Form>

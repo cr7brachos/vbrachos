@@ -14,6 +14,7 @@ import Effectiveness from './pages/Effectiveness';
 import Principles from './pages/Principles';
 import MainCell from './pages/MainCell';
 import AuthenticationComponent from './pages/authentication/authentication.component';
+import BussinessDevelopmentPage from './pages/Bussiness Development/BussinesDev.page';
 
 
 //101023 cloned from GitHub
@@ -42,6 +43,7 @@ function App() {
             <Route path="/effectiveness" element={<Effectiveness />}></Route>
             <Route path="/principles" element={<Principles />}></Route>
             <Route path='/auth' element={<AuthenticationComponent />}></Route>
+            <Route path="/bussiness-development" element={<BussinessDevelopmentPage />}></Route>
           </Route>
           
 

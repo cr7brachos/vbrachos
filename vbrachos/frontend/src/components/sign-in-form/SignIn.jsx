@@ -1,19 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import Col from "react-bootstrap/esm/Col";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import { Link } from "react-router-dom";
-import Spinner from 'react-bootstrap/Spinner';
-import Alert from 'react-bootstrap/Alert';
-import {    createUserDocumentFromAuth, 
-            signInWithGooglePopup, 
+import {    signInWithGooglePopup, 
             signInAuthUserWithEmalAndPassowrd } from "../../utils/firebase/firebase.utils"; 
 import ButtonComponent from "../Button/button.component";
 import "./signIn.styles.scss";
 import AlertComponent from "../Alert/alert.component";
-// import { UserContext } from "../../contexts/user.context";
 
 
 // αρχικές τιμές σε όλα τα πεδία της φόρμας. 
@@ -34,12 +28,9 @@ const SignIn = () => {
 
         const signInWithGoogle = async () => {
             await signInWithGooglePopup();
-          
-            
         }
 
-        // const { setCurrentUser } = useContext(UserContext);
-
+       
         // ελέγχει εάν τα δύο password είναι ίδια
         const handleChange = (event) => {
             const password = document.querySelector("input[name= password]"); //διαβάζει το input με name=password

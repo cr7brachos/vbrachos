@@ -3,12 +3,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CardComponent from '../components/CardComponent';
+import BussinessDevelopment from '../components/Bussiness Development/bussiness-development.component';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const HomePage = () => {
     return (
         <Container style={{marginBottom:150}}>
-            <Row style={{marginTop:10, marginBottom:50}}>
+            <Row style={{marginTop:10, marginBottom:10}}>
                 <Col className="text-center" lg={2} md={2} xs={2}>left column</Col>
+                
                 
                 <Col className="text-center" lg={8} md={8} xs={8}>
                     <Container fluid>
@@ -60,13 +63,20 @@ const HomePage = () => {
                                     image="/images/balance.png"    
                                     />
                             </Col>
-                        </Row>                        
+                        </Row>    
+                        <Row style={{marginTop:10, marginBottom:50}}>
+                            <Col className='text-center mt-1'>
+                                <BussinessDevelopment title="Bussiness Delelopment"></BussinessDevelopment>                                
+                            </Col>
+                            
+                        </Row>                    
                     </Container>
                 </Col>
                     
                     
                 <Col className="text-center" lg={2} md={2} xs={2}>right column</Col>
             </Row>
+            
             
             
     </Container>
