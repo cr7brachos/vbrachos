@@ -6,14 +6,18 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LinkContainer } from 'react-router-bootstrap';
 import Image from 'react-bootstrap/Image';
 import { UserContext } from "../contexts/user.context";
+import { CartContext } from "../contexts/cart.context";
 import { signOutUser } from "../utils/firebase/firebase.utils";
+import Carticon from "./cart-icon/cart-icon";
+import CartDropdown from "./cart-dropdown/cart-dropdown.component";
+
 
 
 
 function Header() {
 
   const { currentUser } = useContext(UserContext);
-  
+  const { isCartopen } = useContext(CartContext);
 
  
 
@@ -80,10 +84,15 @@ function Header() {
                               </LinkContainer>)
               }
 
+              <Carticon />
+              {isCartopen && <CartDropdown />}  {/* εάν το isCartopen είναι true επιστρέφει το CartDropdown */}
           </Nav>
         </Navbar.Collapse>
+        
       </Container>
+      
     </Navbar>
+    
   );
 }
 
