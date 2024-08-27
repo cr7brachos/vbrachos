@@ -1,0 +1,43 @@
+
+    [
+        {
+            "id": 1, 
+            "title": "Leadership", 
+            "subtitle": "Yes, we are in the right jungle!"
+        }, 
+        {
+            "id": 2,
+            "title": "Operations",
+            "subtitle": "Yes, we know how to win this jungle!"
+        },
+        {
+            "id": 3,
+            "title": "Team management",
+            "subtitle": "Yes, we are a real team!"
+        },
+        {
+            "id": 4,
+            "title":"Time management", 
+            "subtitle": "Do the important, not the urgent!"
+        }, 
+        {
+            "id": 5,
+            "title": "Effectiveness",
+            "subtitle": "Begin with the end in mind!"
+        }, 
+        {
+            "id": 6, 
+            "title": "Principles", 
+            "subtitle": "Principles centered, the right guide!"
+        }, 
+        {
+            "id": 7,
+            "title": "Bussiness Delelopment",
+            "subtitle": "Expanding bussiness is our hobby!"
+        }
+
+    ]
+     
+
+
+

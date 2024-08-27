@@ -1,9 +1,14 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { LinkContainer } from 'react-router-bootstrap';
+import { useContext } from 'react';
+import { CartContext } from '../contexts/cart.context';
 
 
-function CardComponent({ title, text, image }) {
+function CardComponent({ product }) {
+    const { title, text, image } = product;
+    const { addItemToCart, cartItemsVB } = useContext(CartContext);
+    const addProductToCart = () => addItemToCart(product);
 
   return (
     <Card style={{ width: '12rem'}}>
@@ -12,7 +17,7 @@ function CardComponent({ title, text, image }) {
         <Card.Title>{title}</Card.Title>
         <Card.Text>{text}</Card.Text>
         <LinkContainer to={`/${title.toLowerCase()}`} >
-          <Button variant="primary">Learn more</Button>
+          <Button variant="primary" onClick={addProductToCart}>Learn more</Button>
         </LinkContainer>
         
       </Card.Body>

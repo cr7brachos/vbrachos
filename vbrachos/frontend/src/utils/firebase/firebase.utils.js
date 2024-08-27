@@ -9,7 +9,7 @@ import {
             signOut,
             onAuthStateChanged
         } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore"
+import { getFirestore, doc, getDoc, setDoc, collection, writeBatch, query, getDocs } from "firebase/firestore"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -33,6 +33,16 @@ export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
 export const db = getFirestore();
+
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+    const collectionRef = collection(db, collectionKey);
+}
+
+export const getCategoriesAndDocuments = async () => {
+    const collectionRef = (db, "lessons");
+    const q = query(collectionRef);
+    const querySnapshot = await getDocs(q);
+}
 
 /* δημιουργεί χρήστη βάσει του Authorization from Firestore*/
 export const createUserDocumentFromAuth = async (userAuth, additionalInformation ={}) => {
